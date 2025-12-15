@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<component type="desktop">
+<component type="desktop-application">
   <id>net.sourceforge.efaxgtk</id>
   <launchable type="desktop-id">net.sourceforge.efaxgtk.desktop</launchable>
   <name>Efax-gtk</name>
@@ -16,11 +16,12 @@
       received fax.
     </p>
   </description>
-  <url type="homepage">http://efax-gtk.sourceforge.net/</url>
+  <url type="homepage">https://efax-gtk.sourceforge.net/</url>
+  <url type="vcs-browser">https://sourceforge.net/p/efax-gtk/git/</url>
   <screenshots>
     <screenshot type="default">
       <caption>Efax Gtk main window</caption>
-      <image type="source" width="403" height="496">https://screenshots.debian.net/shrine/screenshot/721/simage/large-8e95450572edcb72824d298b26493319.png</image>
+      <image type="source" width="403" height="496">https://dl.flathub.org/repo/screenshots/net.sourceforge.efaxgtk-stable/752x423/net.sourceforge.efaxgtk-e72bfb7a0f213aff04bd99b2594b24ee.webp</image>
     </screenshot>
   </screenshots>
   <project_license>GPL-2.0</project_license>
@@ -30,7 +31,6 @@
     <release version="3.2.15" date="2020-06-03">
       <description>
         <p>Bug Fixes:</p>
-        <p></p>
         <ul>
           <li>Fix build for gcc-10</li>
         </ul>
