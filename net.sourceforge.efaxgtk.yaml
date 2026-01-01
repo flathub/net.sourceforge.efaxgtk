@@ -1,6 +1,6 @@
 app-id: net.sourceforge.efaxgtk
 runtime: org.freedesktop.Platform
-runtime-version: '23.08'
+runtime-version: '24.08'
 sdk: org.freedesktop.Sdk
 command: efax-gtk
 rename-desktop-file: efax-gtk.desktop
