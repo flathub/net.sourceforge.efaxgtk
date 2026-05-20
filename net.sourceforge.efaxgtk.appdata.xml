@@ -16,12 +16,12 @@
       received fax.
     </p>
   </description>
-  <url type="homepage">https://efax-gtk.sourceforge.net/</url>
+  <url type="homepage">https://efax-gtk.sourceforge.net</url>
   <url type="vcs-browser">https://sourceforge.net/p/efax-gtk/git/</url>
   <screenshots>
     <screenshot type="default">
       <caption>Efax Gtk main window</caption>
-      <image type="source">https://raw.githubusercontent.com/flathub/net.sourceforge.efaxgtk/refs/heads/master/efax-gtk-gui.png</image>
+      <image type="source">https://raw.githubusercontent.com/flathub/net.sourceforge.efaxgtk/4f4de140e4f1b294f95c3ce2faf9de821cde6cf9/efax-gtk-gui.png</image>
     </screenshot>
   </screenshots>
   <project_license>GPL-2.0</project_license>
