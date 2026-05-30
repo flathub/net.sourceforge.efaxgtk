@@ -1,6 +1,6 @@
 app-id: net.sourceforge.efaxgtk
 runtime: org.freedesktop.Platform
-runtime-version: '24.08'
+runtime-version: '25.08'
 sdk: org.freedesktop.Sdk
 command: efax-gtk
 rename-desktop-file: efax-gtk.desktop
@@ -21,21 +21,20 @@ finish-args:
   # For modems
   - --device=all
 cleanup:
-  - "/include"
+  - /include
+  - /lib/pkgconfig
+  - /share/doc
+  - /share/man
   - "*.la"
   - "*.a"
-  # Shouldn't need these...
-  - "/lib/pkgconfig"
-  - "/share/doc"
-  - "/share/man"
 modules:
   # Shamelessly stole ghostscript module from gimp (and converted to yaml)
   # Minor updates from gimp version to include binaries
   - name: ghostscript
     sources:
       - type: archive
-        url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs9533/ghostscript-9.53.3.tar.gz
-        sha512: c142ef9d83896aa8fd18c8e412220fe8f4950614be00d327d27ab051fe85e16524bf2ee00f46c2aca7a352ce47bc3acf2c4de0f7bbea7e4c55474b8af6cdc0a6
+        url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10071/ghostscript-10.07.1.tar.gz
+        sha512: 480aef1284dbe4d059dd0f9cc60dd5772d5093239df68b838f7f4f7d2efd77de8f03a7baeffbdbe65126a660c1c169137dd7d8cc28dd3bab59cd286a24ca1491
       - type: shell
         commands:
         - cp -p /usr/share/automake-*/config.{sub,guess} freetype/builds/unix/
@@ -45,16 +44,18 @@ modules:
         - cp -p /usr/share/automake-*/config.{sub,guess} lcms2mt/
         - cp -p /usr/share/automake-*/config.{sub,guess} tiff/config/
         - rm -rf libpng/pngread.c
+
   - name: c++-gtk-utils
     sources:
       - type: archive
         url: https://prdownloads.sourceforge.net/cxx-gtk-utils/c++-gtk-utils-2.2.20.tar.gz
         sha256: a64e03e5948d074f8309b036ca0acaf9ae4025c19cef6174f2319c504fb32d8c
+
   - name: efax-gtk
     buildsystem: autotools
     post-install:
-      - install -Dp -m 644 net.sourceforge.efaxgtk.appdata.xml --target-directory=/app/share/appdata
-      - install -Dp -m 644 efax-gtk-scaled-128x128.png /app/share/icons/hicolor/128x128/apps/efax-gtk.png
+      - install -Dm644 net.sourceforge.efaxgtk.appdata.xml -t /app/share/metainfo/
+      - install -Dm644 efax-gtk-scaled-128x128.png /app/share/icons/hicolor/128x128/apps/efax-gtk.png
     sources:
       - type: archive
         url: https://prdownloads.sourceforge.net/efax-gtk/efax-gtk-3.2.15.src.tgz
